@@ -1,11 +1,11 @@
-import os, ast, subprocess, pyperclip
+import os, ast, subprocess, time, pyperclip
 import pyautogui as auto
 
 KeySet = {}
 
 def Clear(_time):
-    os.system(f"sleep {_time}")
-    os.system("clear")
+    time.sleep(_time)
+    os.system("cls" if os.name == "nt" else "clear")
 
 def Save(URL, Account, PassWord):
     KeySet.setdefault(URL)
